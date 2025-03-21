@@ -11,5 +11,4 @@ export enum OPERATING_SYSTEMS {
 //       : "/usr/bin/google-chrome"; 
   
 
-export const CHROME_EXECUTABLE_PATH_SERVER = 
-  process.env.CHROME_EXECUTABLE_PATH || puppeteer.executablePath();
+export const CHROME_EXECUTABLE_PATH_SERVER = puppeteer.executablePath();
