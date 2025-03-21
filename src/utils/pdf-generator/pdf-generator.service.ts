@@ -26,7 +26,13 @@ export class PdfGeneratorService implements OnModuleInit, OnModuleDestroy {
         headless: true,
         args: [
           '--no-sandbox',
-          '--disable-setuid-sandbox'
+          '--disable-setuid-sandbox',
+          "--disable-gpu",
+          "--disable-dev-shm-usage",
+          "--disable-accelerated-2d-canvas",
+          "--disable-features=AudioServiceOutOfProcess",
+          "--single-process",
+          "--no-zygote",
         ],
       });
     } catch (error) {
