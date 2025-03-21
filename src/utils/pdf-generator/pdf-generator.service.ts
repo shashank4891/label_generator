@@ -35,8 +35,10 @@ export class PdfGeneratorService implements OnModuleInit, OnModuleDestroy {
           "--no-zygote",
         ],
       });
+      console.log("✅ Puppeteer Initialized Successfully");
     } catch (error) {
-      throw new Error('Puppeteer failed to initialize');
+      console.error("❌ Puppeteer Launch Error:", error);
+      throw new Error(`Puppeteer failed to initialize: ${error.message}`);
     }
   }
 
