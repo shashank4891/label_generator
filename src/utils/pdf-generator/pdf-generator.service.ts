@@ -1,5 +1,5 @@
 import { Injectable, OnModuleDestroy, OnModuleInit } from '@nestjs/common';
-import puppeteer, { Browser } from 'puppeteer';
+import puppeteer, { Browser } from 'puppeteer-core';
 import { CHROME_EXECUTABLE_PATH_SERVER } from 'src/constants';
 
 @Injectable()
@@ -18,27 +18,16 @@ export class PdfGeneratorService implements OnModuleInit, OnModuleDestroy {
 
   private async initBrowser() {
     try {
-
-      console.log("🟢 Using Chrome Executable Path:", CHROME_EXECUTABLE_PATH_SERVER);
-
       this.browser = await puppeteer.launch({
         executablePath: CHROME_EXECUTABLE_PATH_SERVER,
         headless: true,
         args: [
           '--no-sandbox',
-          '--disable-setuid-sandbox',
-          "--disable-gpu",
-          "--disable-dev-shm-usage",
-          "--disable-accelerated-2d-canvas",
-          "--disable-features=AudioServiceOutOfProcess",
-          "--single-process",
-          "--no-zygote",
+          '--disable-setuid-sandbox'
         ],
       });
-      console.log("✅ Puppeteer Initialized Successfully");
     } catch (error) {
-      console.error("❌ Puppeteer Launch Error:", error);
-      throw new Error(`Puppeteer failed to initialize: ${error.message}`);
+      throw new Error('Puppeteer failed to initialize');
     }
   }
 
