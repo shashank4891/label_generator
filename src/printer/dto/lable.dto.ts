@@ -1,4 +1,4 @@
-import { IsString, IsNumber, Min, MaxLength } from "class-validator";
+import { IsString, IsNumber } from "class-validator";
 
 export class LabelDto {
   @IsString()
@@ -6,9 +6,6 @@ export class LabelDto {
 
   @IsString()
   forwarding_number: string;
-
-  @IsString()
-  vendor_name: string;
 
   @IsString()
   origin: string;

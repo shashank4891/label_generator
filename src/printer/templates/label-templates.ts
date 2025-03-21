@@ -29,7 +29,7 @@ export function awbPublicLabelTemplate(data: any) {
                 <tr><td class="style0" colspan="2">${data.forwarding_number}</td></tr>
               </table>
             </td>
-            <td class="delhivery-logo">${data.vendor_name ?? ''}</td>
+            <td class="delhivery-logo">TQS Logistics</td>
           </tr>
 
           <tr class="row2" style="height: 25%;">
