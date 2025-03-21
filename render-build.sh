@@ -11,3 +11,9 @@ apt-get update && apt-get install -y \
   libasound2
 
 echo "✅ Dependencies installed successfully."
+
+echo "🟢 Installing Google Chrome..."
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+apt-get install -y ./google-chrome-stable_current_amd64.deb
+
+echo "✅ Google Chrome installed successfully."
