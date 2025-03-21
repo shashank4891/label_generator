@@ -1,3 +1,5 @@
+import puppeteer from "puppeteer-core";
+
 export enum OPERATING_SYSTEMS {
     WINDOWS = "Windows_NT",
     LINUX = "Linux",
@@ -10,4 +12,4 @@ export enum OPERATING_SYSTEMS {
   
 
 export const CHROME_EXECUTABLE_PATH_SERVER = 
-  process.env.CHROME_EXECUTABLE_PATH || "/usr/bin/google-chrome";
+  process.env.CHROME_EXECUTABLE_PATH || puppeteer.executablePath();
