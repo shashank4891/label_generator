@@ -7,7 +7,7 @@ import { LabelDto } from './dto/lable.dto';
 export class PrinterController {
     constructor(private readonly printerService: PrinterService){}
 
-    @Get("label")
+    @Post("label")
     async generatePdf(@Res() res: Response, @Body() payload: LabelDto) {
         try {
 
