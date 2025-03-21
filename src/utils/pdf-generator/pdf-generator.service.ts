@@ -1,5 +1,5 @@
 import { Injectable, OnModuleDestroy, OnModuleInit } from '@nestjs/common';
-import puppeteer, { Browser } from 'puppeteer-core';
+import puppeteer, { Browser } from 'puppeteer';
 import { CHROME_EXECUTABLE_PATH_SERVER } from 'src/constants';
 
 @Injectable()
