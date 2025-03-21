@@ -18,6 +18,9 @@ export class PdfGeneratorService implements OnModuleInit, OnModuleDestroy {
 
   private async initBrowser() {
     try {
+
+      console.log("🟢 Using Chrome Executable Path:", CHROME_EXECUTABLE_PATH_SERVER);
+
       this.browser = await puppeteer.launch({
         executablePath: CHROME_EXECUTABLE_PATH_SERVER,
         headless: true,
